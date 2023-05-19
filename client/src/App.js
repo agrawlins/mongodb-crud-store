@@ -8,7 +8,7 @@ const App = () => {
 
   const addItem = (newItem) => {
     axios
-      .post("/items", newItem)
+      .post("https://mongodb-crud-store.onrender.com/items", newItem)
       .then((res) => {
         setItems((prevItems) => [...prevItems, res.data]);
       })
@@ -17,14 +17,14 @@ const App = () => {
 
   const getItems = () => {
     axios
-      .get("/items")
+      .get("https://mongodb-crud-store.onrender.com/items")
       .then((res) => setItems(res.data))
       .catch((err) => console.log(err));
   };
 
   const editItem = (updates, itemId) => {
     axios
-      .put(`/items/${itemId}`, updates)
+      .put(`https://mongodb-crud-store.onrender.com/items/${itemId}`, updates)
       .then((res) => {
         setItems((prevItems) =>
           prevItems.map((item) => (item._id !== itemId ? item : res.data))
@@ -35,7 +35,7 @@ const App = () => {
 
   const deleteItem = (itemId) => {
     axios
-      .delete(`/items/${itemId}`)
+      .delete(`https://mongodb-crud-store.onrender.com/items/${itemId}`)
       .then((res) => {
         setItems((prevItems) =>
           prevItems.filter((item) => item._id !== itemId)
@@ -49,7 +49,7 @@ const App = () => {
       getItems();
     } else {
       axios
-        .get(`/items/search/category?category=${e.target.value}`)
+        .get(`https://mongodb-crud-store.onrender.com/items/search/category?category=${e.target.value}`)
         .then((res) => setItems(res.data))
         .catch((err) => console.log(err));
     }
@@ -57,7 +57,7 @@ const App = () => {
 
   const handleSearch = (e) => {
     axios
-      .get(`/items/search/name?name=${e.target.value}`)
+      .get(`https://mongodb-crud-store.onrender.com/items/search/name?name=${e.target.value}`)
       .then((res) => setItems(res.data))
       .catch((err) => console.log(err));
   };
