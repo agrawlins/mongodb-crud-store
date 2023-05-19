@@ -24,13 +24,6 @@ const AddMovieForm = (props) => {
             onChange={handleChange}
             placeholder="Name"
         />
-        {/* <input
-            type="text"
-            name="category"
-            value={inputs.category}
-            onChange={handleChange}
-            placeholder="Category"
-        /> */}
         <select 
           name="category" 
           value={inputs.category} 
