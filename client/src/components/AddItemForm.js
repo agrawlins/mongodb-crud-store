@@ -24,13 +24,34 @@ const AddMovieForm = (props) => {
             onChange={handleChange}
             placeholder="Name"
         />
-        <input
+        {/* <input
             type="text"
             name="category"
             value={inputs.category}
             onChange={handleChange}
             placeholder="Category"
-        />
+        /> */}
+        <select 
+          name="category" 
+          value={inputs.category} 
+          onChange={handleChange}
+          defaultValue=""
+        >
+          <option value="" disabled hidden>Select A Category</option>
+          <option value="crafts">Arts & Crafts</option>
+          <option value="automotive">Automotive</option>
+          <option value="clothing">Clothing</option>
+          <option value="electronics">Electronics</option>
+          <option value="garden">Garden</option>
+          <option value="food">Groceries</option>
+          <option value="hardware">Hardware</option>
+          <option value="home">Home</option>
+          <option value="office">Office</option>
+          <option value="pharmacy">Pharmacy</option>
+          <option value="pets">Pets</option>
+          <option value="sporting">Sporting Goods</option>
+          <option value="toys">Toys & Games</option>
+        </select>
          <input
             type="number"
             name="quantity"
