@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/*"
-  to = "https://mongodb-crud-store.onrender.com"
+  from = "https://mongodb-crud-store.netlify.app/"
+  to = "https://mongodb-crud-store.onrender.com/items"
   status = 200
   force = true
