@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/api/*"
+  from = "/*"
   to = "https://mongodb-crud-store.onrender.com"
   status = 200
   force = true
