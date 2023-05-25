@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
+const path = require('path')
 require('dotenv').config()
 
 //req = request, res = response 
@@ -9,6 +10,7 @@ require('dotenv').config()
 //Middleware
 app.use(express.json()) //Looks for a request body, and turns it into 'req.body'
 app.use(morgan('dev'))
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 //Connect to Database
 mongoose.connect(
