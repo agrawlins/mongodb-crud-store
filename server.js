@@ -25,6 +25,10 @@ app.use((err, req, res, next) => {
     return res.send({errMsg: err.message})
 })
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+})
+
 //Server Listener
 app.listen(4000, () => {
     console.log("The server is running on Port 4000")
